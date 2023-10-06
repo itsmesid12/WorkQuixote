@@ -14,16 +14,29 @@
             <li><a href="#">Jobs</a></li>
             <li><a href="#">Companies</a></li>
             <li><a href="#">Salaries</a></li>
+            <li>
+                <!-- Embed the search input in the navigation bar -->
+                <form method="POST" action="/search">
+                    <input type="text" name="keyword" placeholder="Search by keyword">
+                    <button type="submit" class="search-button">
+                        <img src="{{ url_for('static', filename='search.png') }}" alt="Search Icon">
+                    </button>
+                </form>
+            </li>
         </ul>
     </nav>
-    
-    <!-- Embed the search input in the top-right corner -->
-    <form method="POST" action="/search">
-        <input type="text" name="keyword" placeholder="Search by keyword">
-        <button type="submit" class="search-button">
-            <img src="{{ url_for('static', filename='search.png') }}" alt="Search Icon">
-        </button>
-    </form>    
+
+    <!-- Display companies in boxes with icons and sliders -->
+    <div class="company-boxes">
+        {% for company in companies %}
+            <div class="company-box">
+                <img src="{{ company.logo }}" alt="{{ company.name }} Logo">
+                <h3>{{ company.name }}</h3>
+                <p>{{ company.description }}</p>
+                <!-- Add sliders or other content as needed for each company -->
+            </div>
+        {% endfor %}
+    </div>
     
     <ul>
         {% for job in job_postings %}

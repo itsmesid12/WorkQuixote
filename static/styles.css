@@ -49,33 +49,27 @@ nav ul li a:hover {
 }
 
 /* Style for the search container */
-.search-container {
-    position: absolute;
-    top: 10px; /* Adjust the top position as needed */
-    left: 1000px;
-
+nav ul li form {
     display: flex;
-    border-radius: 50px; /* Add rounded corners */
-    overflow: hidden; /* Hide overflowing content */
-    background-color: #ffffff; /* Background color for the search container */
+    align-items: center;
 }
 
-.search-container input[type="text"] {
+nav ul li form input[type="text"] {
     border: none;
     padding: 10px;
-    border-radius: 50px; /* Rounded corners for the input */
-    outline: 20;
-    border-color: #000;
+    border-radius: 50px;
+    outline: none;
     width: 200px;
 }
 
-.search-button {
+nav ul li form .search-button {
     background-color: transparent;
-    border: none;
-    padding: 0px;
+    border: black;
+    padding: 10px;
     cursor: pointer;
 }
 
-.search-button img {
-    width: 20px; /* Adjust the size of the search icon */
+nav ul li form .search-button img {
+    width: 25px;
+    height: 25px;
 }
