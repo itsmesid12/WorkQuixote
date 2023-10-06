@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Job Search</title>
+    <title>WorkQuixote</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Add the favicon link -->
+    <link rel="icon" href="{{ url_for('static', filename='wlogo.jpg') }}" type="image/jpg">
 </head>
 <body>
-    <h1>Job Search</h1>
-
+    <!-- Create a navigation bar -->
+    <nav>
+        <ul>
+            <img id="company-logo" src="{{ url_for('static', filename='logo2.png') }}" alt="Company Logo">
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Companies</a></li>
+            <li><a href="#">Salaries</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Embed the search input in the top-right corner -->
     <form method="POST" action="/search">
         <input type="text" name="keyword" placeholder="Search by keyword">
-        <button type="submit">Search</button>
-    </form>
-
-    <h2>Job Postings</h2>
+        <button type="submit" class="search-button">
+            <img src="{{ url_for('static', filename='search.png') }}" alt="Search Icon">
+        </button>
+    </form>    
+    
     <ul>
         {% for job in job_postings %}
             <li>
@@ -21,6 +33,5 @@
             </li>
         {% endfor %}
     </ul>
-
 </body>
 </html>
