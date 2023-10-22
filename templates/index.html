@@ -1,50 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>WorkQuixote</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-    <!-- Add the favicon link -->
-    <link rel="icon" href="{{ url_for('static', filename='wlogo.jpg') }}" type="image/jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\Admin\OneDrive\Desktop\WorkQuixote\static\styles.css">
+    <title>Job Search</title>
 </head>
 <body>
-    <!-- Create a navigation bar -->
-    <nav>
-        <ul>
-            <img id="company-logo" src="{{ url_for('static', filename='logo2.png') }}" alt="Company Logo">
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Companies</a></li>
-            <li><a href="#">Salaries</a></li>
-            <li>
-                <!-- Embed the search input in the navigation bar -->
-                <form method="POST" action="/search">
-                    <input type="text" name="keyword" placeholder="Search by keyword">
-                    <button type="submit" class="search-button">
-                        <img src="{{ url_for('static', filename='search.png') }}" alt="Search Icon">
-                    </button>
-                </form>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <div class="logo">JobSearch</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Companies</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Display companies in boxes with icons and sliders -->
-    <div class="company-boxes">
-        {% for company in companies %}
-            <div class="company-box">
-                <img src="{{ company.logo }}" alt="{{ company.name }} Logo">
-                <h3>{{ company.name }}</h3>
-                <p>{{ company.description }}</p>
-                <!-- Add sliders or other content as needed for each company -->
-            </div>
-        {% endfor %}
+    <div class="search-bar">
+        <input type="text" placeholder="Search for jobs, companies, or people">
+        <button>Search</button>
     </div>
-    
-    <ul>
-        {% for job in job_postings %}
-            <li>
-                <strong>{{ job.title }}</strong> at {{ job.company }} ({{ job.location }})<br>
-                {{ job.description }}
-            </li>
-        {% endfor %}
-    </ul>
+
+    <section class="job-listings">
+        <article class="job-card">
+            <h2>Software Engineer</h2>
+            <p>Company: XYZ Tech</p>
+            <p>Location: New York, NY</p>
+            <p>Posted: 2 days ago</p>
+            <button>Apply</button>
+        </article>
+        <!-- Add more job cards here -->
+    </section>
+
+    <section class="company-listings">
+        <article class="company-card">
+            <h2>XYZ Tech</h2>
+            <p>Industry: Technology</p>
+            <p>Location: San Francisco, CA</p>
+            <button>Visit Company</button>
+        </article>
+        <!-- Add more company cards here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 JobSearch</p>
+    </footer>
 </body>
 </html>

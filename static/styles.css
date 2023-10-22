@@ -1,75 +1,91 @@
-/* styles.css */
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
 }
 
-/* Navigation bar styles */
+header {
+    background-color: #0077B5;
+    color: #fff;
+    padding: 10px 0;
+}
+
 nav {
-    background-color: #fff;
-    border-bottom: 2px solid #a1d491;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-nav ul img {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
+    list-style: none;
 }
 
 nav ul li {
     display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
     margin-right: 20px;
 }
 
-nav ul li a:hover {
-    color: #007BFF;
+.search-bar {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
 }
 
-/* Adjust the logo size to be a rectangle */
-#company-logo {
-    width: 150px;
-    height: 50px;
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
-/* Style for the search container */
-nav ul li form {
-    display: flex;
-    align-items: center;
-}
-
-nav ul li form input[type="text"] {
+.search-bar button {
+    background-color: #0077B5;
+    color: #fff;
     border: none;
-    padding: 10px;
-    border-radius: 50px;
-    outline: none;
-    width: 200px;
-}
-
-nav ul li form .search-button {
-    background-color: transparent;
-    border: black;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
-nav ul li form .search-button img {
-    width: 25px;
-    height: 25px;
+.job-listings, .company-listings {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.job-card, .company-card {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h2, .company-card h2 {
+    font-size: 20px;
+}
+
+.job-card button, .company-card button {
+    background-color: #0077B5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
 }
