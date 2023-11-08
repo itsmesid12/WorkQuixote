@@ -90,14 +90,7 @@ def display_home():
 
             col1, col2 = st.columns(2)
 
-            if col1.button('Previous'):
-                if state.page > 0:
-                    state.page -= 1
-
-            if col2.button("Next"):
-                if state.page < num_pages - 1:
-                    state.page += 1
-
+            
 def display_about():
     st.write(
         """
